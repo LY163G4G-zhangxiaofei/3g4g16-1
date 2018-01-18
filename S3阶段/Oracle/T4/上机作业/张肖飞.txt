@@ -1,0 +1,39 @@
+--第四章
+--第一个首字母大写
+select initcap('hello') from dual;
+--把大写转换小写
+select lower('HELLO') from dual;
+--去xyz后面的字母
+select ltrim( 'xyzadams','xyz') from dual;
+--返回绝对值
+select abs(-15) from dual; 
+--向上取整返回取整后的值
+select ceil(44.778) from dual; 
+--求余弦值
+select cos(180) from dual; 
+--求正弦值
+select sin(180) from dual;
+--求次方
+select power(4,2) from dual; 
+--获取正负号  返回1或-1
+select sign(-30) from dual;
+--四舍五入
+select round(100.256,2) from dual; 
+--取整
+select trunc(100.256,2) from dual; 
+--今天的日期和时间:
+select sysdate from dual;
+--获取两个日期之间间隔的月数
+select months_between(sysdate,to_date('2013-10-10','yyyy-mm-dd'))from dual;
+--在指定的日期基础上加是指定的月数
+select add_months(sysdate,5) from dual;
+--获取指定日期所在月的最后一天
+select last_day(sysdate) from dual;
+--高级查询，将CLERK替换成“研发部”，SALESMAN替换成“经理部” 
+select empno,ename,
+	case job
+		when 'CLERK' then '研发部'
+		when 'SALESMAN' then '经理部'
+		else job
+	end
+from emp;
