@@ -1,0 +1,16 @@
+--创建视图语句
+create or replace view empview
+as
+select ename,sal from emp;
+--视图添加数据
+create or replace view empview
+as
+select * from emp where sal>5000
+with check option; 
+--创建索引
+create index index_name on table_name(index_columu)
+[pctfree 0];
+--查询emp表的索引信息
+select index_name,column_name,column_position from user_ind_columns where table_name=‘emp‘;
+--删除索引：
+drop index indexname;
